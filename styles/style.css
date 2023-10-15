@@ -6,6 +6,8 @@
   background-position: center;
   background-attachment: fixed;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -14,7 +16,7 @@
   align-items: flex-start;
   /*justify-items: end; */
   min-width: 375px;
-  height: 668px;
+  height: 100%;
   padding: 10px;
   background-image: var(--background-image);
   position: relative;
@@ -43,7 +45,6 @@
 .header__theme-menu-button {
   display: flex;
   background: none;
-  border: none;
   outline: none;
   text-decoration: none;
   color: var(--button-color);
@@ -88,10 +89,6 @@
   position: absolute;
   inset-inline-end: 10px;
   inset-block-start: 10px;
-}
-
-.rec_text {
-
 }
 
 .rec::after {
@@ -176,9 +173,6 @@
   font-weight: 700;
   line-height: 23.4px; /* 130% */
   margin-top: 40px;
-}
-
-.section {
 }
 
 .title_section {
@@ -313,7 +307,7 @@
   display: grid;
   grid-template-rows: auto;
   min-width: 375px;
-  height: 668px;
+  height: 100%;
   padding: 10px;
   position: relative;
   box-sizing: border-box;
