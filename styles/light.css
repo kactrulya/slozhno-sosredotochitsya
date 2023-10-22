@@ -23,7 +23,7 @@
   --decoration-border-bottom: 1px solid #353430;
   --title-decor:#FF8DCB;
   --header-text-color: #FFC2E6;
-  --text-shadow: 4px 4px 0px #FF0070;
+  --text-shadow:  #FF0070;
   --text-section-color: #353430;
   --main-text-color: #353430;
   --main-title-section-text:#353430;
@@ -32,6 +32,7 @@
 }
 
 @media (prefers-color-scheme: light) {
+
   :root  {
     --background-image: url(../images/cover-image-light.png);
     --main-background-color:#FFF1F7;
@@ -47,7 +48,7 @@
     --decoration-border-bottom: 1px solid #353430;
     --title-decor:#FF8DCB;
     --header-text-color: #FFC2E6;
-    --text-shadow: 4px 4px 0px #FF0070;
+    --text-shadow: #FF0070;
     --text-section-color: #353430;
     --main-text-color: #353430;
     --main-title-section-text:#353430;

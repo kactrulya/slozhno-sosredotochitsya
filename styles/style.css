@@ -116,8 +116,7 @@
   display: inline-flex;
   justify-content: flex-end;
   position: relative;
-  padding-top: 31px;
-  padding-bottom: 86px;
+  align-self: center; 
 }
 
 .header__discription-text {
@@ -131,7 +130,8 @@
 }
 
 .title-decor {
-  background-color: var(--bg-text-color);
+  background-color: var(--title-decor);
+  margin-bottom: 20px;
 
 }
 
@@ -153,6 +153,7 @@
   grid-template-columns: 1fr;
   min-width: 375px;
   padding: 10px;
+  padding-bottom: 20px;
 }
 
 .main_title {
@@ -163,6 +164,7 @@
   font-weight: 700;
   line-height: 23.4px; /* 130% */
   margin-top: 40px;
+  padding-bottom: 20px;
 }
 
 .title_section {
@@ -183,6 +185,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 23.4px; /* 130% */
+  padding-bottom: 20px;
 }
 
 .text_link {
@@ -273,10 +276,9 @@
 }
 
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .header {
     min-width: 769px;
-    min-height: 1024px;
   }
 
   .header__title {
