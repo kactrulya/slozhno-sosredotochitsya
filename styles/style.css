@@ -307,6 +307,7 @@
     grid-template-columns: 1fr 2fr;
     align-items: center;
     justify-content: start;
+    column-gap: 20px;
     
   }
 
