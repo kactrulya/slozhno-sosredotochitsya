@@ -317,6 +317,10 @@
     grid-column-end: 2;
   }
 
+  .picture_section {
+    margin-top: 80px;
+  }
+
   .picture_sunset {
     grid-column-start: 1;
     grid-column-end: 3;
