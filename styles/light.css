@@ -12,8 +12,8 @@
   --background-image: url(../images/cover-image-light.png);
   --main-background-color:#FFF1F7;
   --button-color: #353430;
-  --border-button-color:1px solid #353430;
-  --border-button-color-hover:1px solid rgba(50, 49, 45, 0.40);
+  --border-button-color: #353430;
+  --border-button-color-hover: rgba(50, 49, 45, 0.40);
   --rec-color:#FFF1F7;
   --rec-bg-color:#FFF1F7;
   --rec-shadow: drop-shadow(0px 0px 4px #FFF1F7);
@@ -28,16 +28,16 @@
   --main-text-color: #353430;
   --main-title-section-text:#353430;
   --link-text-color:#353430;
-  --link-text-shadow:2px 2px 0px #FF8DCB;;
+  --link-text-shadow:2px 2px 0px #FF8DCB;
 }
 
 @media (prefers-color-scheme: light) {
-  .theme_dark {
+  :root  {
     --background-image: url(../images/cover-image-light.png);
     --main-background-color:#FFF1F7;
     --button-color: #353430;
-    --border-button-color:1px solid #353430;
-    --border-button-color-hover:1px solid rgba(50, 49, 45, 0.40);
+    --border-button-color: #353430;
+    --border-button-color-hover:rgba(50, 49, 45, 0.40);
     --rec-color:#FFF1F7;
     --rec-bg-color:#FFF1F7;
     --rec-shadow: drop-shadow(0px 0px 4px #FFF1F7);
@@ -52,6 +52,6 @@
     --main-text-color: #353430;
     --main-title-section-text:#353430;
     --link-text-color:#353430;
-    --link-text-shadow:2px 2px 0px #FF8DCB;;
+    --link-text-shadow:2px 2px 0px #FF8DCB;
   }
 }
