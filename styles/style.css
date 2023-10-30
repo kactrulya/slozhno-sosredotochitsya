@@ -237,7 +237,7 @@
 
 .pictures {
   display: grid;
-  row-gap: 20px;
+  row-gap: 10px;
 
 }
 
@@ -356,13 +356,16 @@
     align-items: center;
     justify-content: start;
     column-gap: 20px;
-    padding-top: 80px;
     
   }
 
   .mini_title-section {
     grid-column-start: 2;
     grid-column-end: 2;
+  }
+
+  .pictures {
+    row-gap: 20px;
   }
 
   .picture_section {
