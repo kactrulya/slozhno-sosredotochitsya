@@ -37,7 +37,8 @@
   list-style-type: none;
   display: flex;
   flex-direction: column; /* Располагаем в колонке */
-  align-items: flex-end
+  align-items: flex-end;
+  gap: 10px;
 }
 
 .header__theme-menu-button {
@@ -55,14 +56,22 @@
   border: none;
   background-color: transparent;
   text-transform: lowercase;
-  margin-bottom: 13px;
+  border: 1px solid transparent;
+  padding: 1.5px 13px;
 }
 
 
 
 .header__theme-menu-button:hover {
-  border: 1px solid currentColor;
+  border: 1px solid var(--border-button-color-hover);
   cursor: pointer;
+  padding: 1.5px 13px;
+}
+
+.header__theme-menu-button_active {
+  padding: 1.5px 13px;
+  border: 1px solid currentColor;
+  cursor: none;
 }
 
 .header__theme-menu-button:focus {
@@ -80,25 +89,23 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 3px;
+  gap: 8px;
   color: var(--rec-color);
   position: absolute;
-  inset-inline-end: 38px;
-  inset-block-start: 15px;
+  inset-inline-end: 19px;
+  inset-block-start: 12px;
 }
 
 .rec::before {
   content: "";
-  display: block;
+  display: inline-block;
   width: 9px;
   height: 9px;
   background-color: var(--rec-bg-color);
   border-radius: 50%;
   filter: var(--rec-shadow);
-  position: absolute;
   right: 10px;
-  inset-inline-end: -18px;
-  inset-block-start: 5px;
+  order: 2;
 }
 
 .header__title {
@@ -131,8 +138,7 @@
 
 .title-decor {
   background-color: var(--title-decor);
-  margin-bottom: 10px;
-
+  color: var(--text-section-color);
 }
 
 .decorated-zone::after {
@@ -148,12 +154,26 @@
   position: absolute;
 }
 
+.section {
+  display: grid;
+  row-gap: 20px;
+}
+
+.text-block{
+  display: grid;
+  row-gap: 10px;
+}
+
+.text-block-three {
+  display: grid;
+  row-gap: 10px;
+}
+
 .main_content {
   display: grid;
   grid-template-columns: 1fr;
-  min-width: 375px;
   padding: 10px;
-  padding-bottom: 20px;
+  row-gap: 50px;
 }
 
 .main_title {
@@ -163,12 +183,12 @@
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px; /* 130% */
-  padding-top: 30px;
-  padding-bottom: 20px;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  align-self: flex-start;
 }
 
 .title_section {
-  color: var(--text-section-color);
   font-family: "IBM Plex Mono", Arial, monospace;
   font-size: 18px;
   font-style: normal;
@@ -185,7 +205,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: 23.4px; /* 130% */
-  padding-bottom: 20px;
 }
 
 .text_link {
@@ -205,11 +224,10 @@
 .text_link:focus-visible {
   text-decoration: none;
   outline: none;
-  border: var(--border-button-color);
+  border: 1px solid currentColor;
 }
 
 .mini_title-section {
-  color: var(--text-section-color);
   font-family: "IBM Plex Mono", Arial, monospace;
   font-size: 18px;
   font-style: normal;
@@ -219,6 +237,7 @@
 
 .pictures {
   display: grid;
+  row-gap: 20px;
 
 }
 
@@ -227,8 +246,7 @@
   gap: 20px;
 }
 
-.picture_section {
-  color: var(--text-section-color);
+.picture_title {
   font-family: "IBM Plex Mono", Arial, monospace;
   font-size: 18px;
   font-style: normal;
@@ -246,15 +264,15 @@
   display: grid;
   grid-template-rows: auto;
   min-width: 375px;
-  height: 100vh;
+  min-height: 100vh;
   padding: 10px;
 }
 
 .footer__title {
   color: var(--header-text-color);
-  text-shadow: 4px 4px 0px var(--text-shadow); /* извините, но у нас в макете на всех разрешениях стоит тень #FF0070 (на темной теме); */
+  text-shadow: 2px 2px 0px var(--text-shadow); /* извините, но у нас в макете на всех разрешениях стоит тень #FF0070 (на темной теме); */
   font-family: "IBM Plex Mono", Arial, monospace;
-  font-size: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%; /* 95.7px */
@@ -279,10 +297,31 @@
 @media (min-width: 768px) {
   .header {
     min-width: 769px;
+    padding: 20px;
+  }
+
+  .rec {
+    inset-inline-end: 30px;
+    inset-block-start: 23px;
+  }
+
+  .decorated-zone::before {
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-block-end: 20px;
+    inset-inline-start: 20px;
   }
 
   .header__title {
     text-align: left;
+  }
+
+  .main_content {
+    row-gap: 80px;
+    padding: 20px;
   }
 
   .section-two-columns {
@@ -290,7 +329,12 @@
     grid-template-columns: 1fr 2fr;
     align-items: center;
     justify-content: start;
+    column-gap: 20px;
     
+  }
+
+  .text-block {
+    grid-column-start: 2;
   }
 
   .text_section {
@@ -300,6 +344,10 @@
   .title_section {
     grid-column-start: 2;
     grid-column-end: 2;
+  }
+
+  .title_three-columns {
+    width: 236px;
   }
 
   .section-five-rows {
@@ -321,30 +369,38 @@
     margin-top: 80px;
   }
 
-  .picture_sunset {
+  .picture-grid img:nth-child(1) {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 1;
-  }
-  .picture_ice-cream {
+}
+
+.picture-grid img:nth-child(2) {
     grid-column-start: 3;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
-  }
-  .picture_tape {
+}
+
+.picture-grid img:nth-child(3) {
     grid-column-start: 1;
     grid-column-end: 1;
     grid-row-start: 2;
     grid-row-end: 5;
-  }
-  .picture_street {
+}
+
+.picture-grid img:nth-child(5){
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 5;
-  }
+}
+
+.footer {
+  padding: 20px;
+}
+
 }
 
 @media (min-width: 1024px) {
@@ -357,6 +413,7 @@
   } 
   .title_three-columns {
     grid-column: span 3;
+    width: 315px;
   }
 
   .header__discription {
@@ -369,16 +426,10 @@
 
 
 .header__theme-menu {
-  grid-row-start: 1;
-  grid-row-end: 1;
-  inset-block-start: auto; /* если я задаю -20 как Вы указали, он меню уезжает за экран(( (еще я указывал 20px, но меню все равно чуть выше уголка, при авто вроде все как в макете) */
   align-self: start;
 }
 
   .header__theme-menu-list {  /* если я удаляю это свойства, блок с кнопками " неон, день " становятся как на разрешении 369 */
-    list-style-type: none;
-    display: flex;
-    align-items: flex-start;
     justify-content: center;
     flex-direction: row;
   }   

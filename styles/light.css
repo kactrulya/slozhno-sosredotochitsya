@@ -55,4 +55,9 @@
     --link-text-color:#353430;
     --link-text-shadow:2px 2px 0px #FF8DCB;
   }
+
+  .them_light .rec {
+    display: none;
+  }
+
 }
