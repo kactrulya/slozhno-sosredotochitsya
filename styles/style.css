@@ -172,7 +172,7 @@
 .main_content {
   display: grid;
   grid-template-columns: 1fr;
-  padding: 10px;
+  padding: 40px 10px 40px 10px;
   row-gap: 50px;
 }
 
@@ -321,7 +321,7 @@
 
   .main_content {
     row-gap: 80px;
-    padding: 20px;
+    padding: 60px 20px 60px 20px;
   }
 
   .section-two-columns {
