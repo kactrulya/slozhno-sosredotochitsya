@@ -53,7 +53,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: 18px; /* 100% */
-  border: none;
   background-color: transparent;
   text-transform: lowercase;
   border: 1px solid transparent;
@@ -65,13 +64,11 @@
 .header__theme-menu-button:hover {
   border: 1px solid var(--border-button-color-hover);
   cursor: pointer;
-  padding: 1.5px 13px;
 }
 
 .header__theme-menu-button_active {
-  padding: 1.5px 13px;
   border: 1px solid currentColor;
-  cursor: none;
+  pointer-events: none;
 }
 
 .header__theme-menu-button:focus {
@@ -112,7 +109,7 @@
   color: var(--header-text-color);
   font-family: "IBM Plex Mono", Arial, monospace;
   text-shadow: 4px 4px 0px var(--text-shadow);
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); 
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%; /* 95.7px */
@@ -128,7 +125,6 @@
 
 .header__discription-text {
   width: 355px;
-  color: var(--text-section-color);
   font-family: "IBM Plex Mono", Arial, monospace;
   font-size: 18px;
   font-style: normal;
@@ -164,11 +160,6 @@
   row-gap: 10px;
 }
 
-.text-block-three {
-  display: grid;
-  row-gap: 10px;
-}
-
 .main_content {
   display: grid;
   grid-template-columns: 1fr;
@@ -195,8 +186,6 @@
   font-weight: 700;
   line-height: 23.4px; /* 130% */
 }
-
-
 
 .text_section {
   color: var(--main-text-color);
@@ -272,7 +261,7 @@
   color: var(--header-text-color);
   text-shadow: 2px 2px 0px var(--text-shadow); /* извините, но у нас в макете на всех разрешениях стоит тень #FF0070 (на темной теме); */
   font-family: "IBM Plex Mono", Arial, monospace;
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%; /* 95.7px */
@@ -296,7 +285,6 @@
 
 @media (min-width: 768px) {
   .header {
-    min-width: 769px;
     padding: 20px;
   }
 
@@ -316,7 +304,12 @@
   }
 
   .header__title {
-    text-align: left;
+    right: 24px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__discription-text {
+    width: 364px;
   }
 
   .main_content {
@@ -326,15 +319,16 @@
 
   .section-two-columns {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-content: start;
     column-gap: 20px;
     
   }
 
-  .text-block {
+  .text-block_column {
     grid-column-start: 2;
+    grid-column-end: 4;
   }
 
   .text_section {
@@ -343,20 +337,11 @@
   }
   .title_section {
     grid-column-start: 2;
-    grid-column-end: 2;
+    grid-column-end: 4;
   }
 
   .title_three-columns {
     width: 236px;
-  }
-
-  .section-five-rows {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    justify-content: start;
-    column-gap: 20px;
-    
   }
 
   .mini_title-section {
@@ -408,9 +393,18 @@
   padding: 20px;
 }
 
+.footer__title {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+}
+
 }
 
 @media (min-width: 1024px) {
+
+  .header__title {
+    right: 20px;
+  }
+
   .section-three-columns { 
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr; 
